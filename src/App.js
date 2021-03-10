@@ -66,7 +66,7 @@ function App() {
                * Maps over each Step object in our slice of state, creating a new step Component
                */
               steps.map( step => {
-                return <Step step={ step } content={ getLatest( step.versionContent ) } key={ step.id }/>
+                return <Step stepNum={ step.stepNumber } content={ getLatest( step.versionContent ) } key={ step.id }/>
               })
             }
           </ul>

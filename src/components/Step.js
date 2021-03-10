@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Step( { step, content } ){
+export default function Step( { stepNum, content } ){
 
   return(
     <li>
@@ -11,7 +11,7 @@ export default function Step( { step, content } ){
           */
          }
        
-        <h2>{ ( step.stepNumber < 10 ? '0' : '' ) + step.stepNumber }</h2>
+        <h2>{ ( stepNum < 10 ? '0' : '' ) + stepNum }</h2>
         <h3>{ content.title }</h3>
         <p>{ content.body }</p>
     </li>
