@@ -1,13 +1,222 @@
-body {
+/**
+** CUSTOM FONT IMPORT
+**/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/**
+** CSS RESET
+**/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'Lato', sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html{
+  font-size:62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*
+** CUSTOM CSS
+*/
+body{
+  background-color: #f2f1ef;
+}
+/*
+** Header Area
+*/
+header{
+  background: #222222;
+}
+header .logo{
+  margin: 0 auto;
+  display:flex;
+  align-items:center;
+  padding: 1% 15%;
+}
+header .logo img{
+  width:144px;
+  filter: invert(77%) sepia(63%) saturate(434%) hue-rotate(105deg) brightness(99%) contrast(79%);
+}
+/*
+** SPLASH IMAGE AREA
+*/
+.container{
+  color: #FFFFFF;
+}
+.splash-image{
+  background-image: url('./assets/images/photo-couch.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50%;
+  min-height: 100vh;
+}
+.splash-container{
+  display:flex;
+  align-items:center;
+  height:100%;
+  width:100%;
+  padding:18% 0 18% 0;
+}
+.splash-container-content{
+  display:flex;
+  flex-direction: column;
+  padding-left:15%;
+  line-height:5rem;
+  width:80%;
+}
+.splash-container-content h3{
+  font-size:2.5rem;
+  font-weight:500;
+  margin-bottom: 3rem;
+}
+.splash-container-content h2{
+  font-size:6rem;
+  font-weight:300;
+  margin-bottom:3rem;
+}
+.splash-container-content p{
+  font-size:2.5rem;
+  font-weight:300;
+  margin-bottom:4rem;
+}
+@media (max-width:555px){
+  header .logo{
+    justify-content: center;
+  }
+  .splash-container-content{
+    width:100%;
+    padding:15% 5%;
+    align-items: center;
+    text-align:center;
+  }
+  .splash-container-content h2{
+    font-size:2.5rem;
+    font-weight:500;
+  }
+  .splash-container-content h3{
+    font-size:2rem;
+  }
+  .splash-container-content p{
+    font-size:2rem;
+  }
+}
+.splash-container-content button{
+  background-color: #50e3c2;
+  color:#2f3237;
+  font-size:1.8rem;
+  font-weight:700;
+  max-width:200px;
+  padding: 1.5rem;
+  cursor:pointer;
+  border:none;
+  border-radius:50px;
+  transition: all .2s ease;
+  text-transform: uppercase;
+}
+.splash-container-content button:hover{
+  background-color: #67fbda;
+}
+.splash-container-content button:active{
+  background:#42c5a8;
+}
+.splash-container-content button:focus{
+  border:none;
+  outline:none;
+}
+
+
+
+/*
+** HOW IT WORKS SECTION
+*/
+.how-it-works{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  text-align:center;
+  color:#2f3237;
+  width:70%;
+  margin:auto;
+  margin-top:2%;
+
+}
+.how-it-works h2{
+  font-size:4rem;
+  margin-bottom:2rem;
+}
+.how-it-works ul{
+  display:flex;
+  justify-content: space-around;
+  margin-top:3%;
+}
+.how-it-works ul li{
+  padding:0 1.8rem;
+  box-sizing: border-box;
+  margin-bottom:5%;
+}
+.how-it-works ul li h2{
+  font-size:6rem;
+  display:inline-block;
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+  border-bottom:5px solid #51e3c2;
+}
+.how-it-works ul li h3{
+  text-transform: uppercase;
+  font-weight:600;
+  font-size:1.8rem;
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+.how-it-works ul li p{
+  font-size:2rem;
+  line-height:25px;
+}
+@media ( max-width: 768px){
+  .how-it-works ul{
+    flex-direction: column;
+    align-items: center;
+  }
+  .how-it-works ul li {
+    width:100%;
+  }
 }
